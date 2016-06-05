@@ -20,52 +20,6 @@ input {
    }
 }
 
-**Filter section**
-
-filter {
-    mutate {
-        rename => {
-             "source" => "filename"
-        }
-    }
-    if [type] == "apache" {  
-      mutate {
-          add_field => { 
-                 "section" => "nohtml"
-                 "active" => "FALSE"
-           }
-        }
-       grok {
-           match => { "message" => "%{OVHCOMMONAPACHELOG}" }
-           patterns_dir => "/opt/logstash/patterns"
-       }
-       if ("_grokparsefailure" in [tags]) {
-           mutate {
-              remove_tag => [ "_grokparsefailure" ]
-            }
-           grok {
-              match => [ "message", "%{OVHCOMBINEDAPACHELOG}" ]
-              patterns_dir => "/opt/logstash/patterns"
-             }
-        }
-        elasticsearch { 
-      	  hosts => "laas.runabove.com" 
-      	  index => "logsDataSEO" 
-      	  ssl => true 
-      	  query => 'type:csv AND request:"%{[request]}"'
-      	  fields => [["section","section"],["active","active"],["speed","speed"],["compliant","compliant"],["depth","depth"],["inlinks","inlinks"],["outlinks","outlinks"],["status_title","status_title"],["status_description","status_description"],["status_h1","status_h1"],["group_inlinks","group_inlinks"],["group_wordcount","group_wordcount"]]
-        }
-    }
-	
-    if [type] == "csv" {
-  		csv {
-  			columns => ["request", "section","active", "speed", "compliant","depth","inlinks","outlinks","status_title","status_description","status_h1","group_inlinks","group_wordcount"]
-  			separator => ";"
-  		} 
-	}
-	
-}
-
 
 **Custom grok patterns**
 
