@@ -2,8 +2,8 @@
  SEO Dashboard using R and ScreamingFrog for Reporting and Monitoring 
 
 Read more : 
-https://data-seo.com/2016/05/04/dashboard-seo-active-page/
-https://data-seo.com/2016/06/05/dashboard-seo-part-2/
+- https://data-seo.com/2016/05/04/dashboard-seo-active-page/
+- https://data-seo.com/2016/06/05/dashboard-seo-part-2/
 
 
 ----------------------
