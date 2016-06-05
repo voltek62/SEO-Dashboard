@@ -88,9 +88,9 @@ urls$`Group Inlinks` <- "URLs with No Follow Inlinks"
 
 urls$`Group Inlinks`[which(urls$`Inlinks` < 1  )] <- "URLs with No Follow Inlinks"
 urls$`Group Inlinks`[which(urls$`Inlinks` == 1 )] <- "URLs with 1 Follow Inlink"
-urls$`Group Inlinks`[which(urls$`Inlinks` > 1 & urls$`Inlinks` < 6)] <- "URLs Between 2 and 5 Follow Inlinks"
-urls$`Group Inlinks`[which(urls$`Inlinks` >= 6 & urls$`Inlinks` < 11 )] <- "URLs Between 5 and 10 Follow Inlinks"
-urls$`Group Inlinks`[which(urls$`Inlinks` >= 11)] <- "URLs with more 10 Follow Inlinks"
+urls$`Group Inlinks`[which(urls$`Inlinks` > 1 & urls$`Inlinks` < 6)] <- "URLs with  2 to 5 Follow Inlinks"
+urls$`Group Inlinks`[which(urls$`Inlinks` >= 6 & urls$`Inlinks` < 11 )] <- "URLs with 5 to 10 Follow Inlinks"
+urls$`Group Inlinks`[which(urls$`Inlinks` >= 11)] <- "URLs with more than 10 Follow Inlinks"
 
 urls$`Group Inlinks` <- as.factor(urls$`Group Inlinks`)
 
