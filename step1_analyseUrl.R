@@ -6,7 +6,7 @@ library(fastmatch)
 
 #conf
 siteconf <- "./conf/blog.csv"
-sitename <- "http://www.myurl.fr"
+sitename <- "https://wordpress-logs-vincent59.c9users.io"
 pathxlsx <- "./input/blog/internal_html_test.xlsx"
 
 ## use xlsx format to prevent read errors with csv and xls

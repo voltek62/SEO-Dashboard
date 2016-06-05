@@ -5,7 +5,7 @@ library(magrittr)
 
 #screaming frog :  Bulk Export > All Outlinks from the top menu, and save the CSV file 
 file_outlinks         <- './input/blog/all_outlinks_test.csv'
-website_url          <- 'http://www.myurl.fr'
+website_url          <- 'https://wordpress-logs-vincent59.c9users.io'
 
 # transform raw internal page rank to page rank
 map <- function(x, range = c(0,1), from.range=NA) {
