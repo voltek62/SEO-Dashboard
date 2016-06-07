@@ -76,7 +76,7 @@ urls$Compliant <- TRUE
 urls$Compliant[which(urls$`Status Code` != 200
                             | urls$`Canonical Link Element 1` != urls$Address
                             | urls$Status != "OK"
-                            | grepl("noindex",urls$`Inlinks`)
+                            | grepl("noindex",urls$`Meta Robots 1`)
                             )] <- FALSE
 
 urls$Compliant <- as.factor(urls$Compliant)
