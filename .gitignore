@@ -24,4 +24,5 @@ output/*.csv
 input/*.xlsx
 input/dataseo/
 
-test.R
+# Kibana
+kibana-4.1.8-windows/config/kibana.yml
