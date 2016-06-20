@@ -21,8 +21,11 @@ if (!exists("urls")) {
                       na = "",
                       skip=1)
   
-  # #FIX : last line is always NA
+  # last line is always NA
   urls <- head(urls,-1)
+  
+  # crawler generate NA columns
+  urls <- urls[colSums(!is.na(urls)) > 0]  
   
   print("urls")
   print(proc.time() - ptm)
@@ -110,7 +113,8 @@ print("Speed OK")
 
 # Detect Active Pages
 urls$Active <- FALSE
-if (is.null(urls$`GA Sessions`)) urls$`GA Sessions` <- 0
+urls$`GA Sessions`[is.na(urls$`GA Sessions`)] <- "0"
+urls$`GA Sessions` <- as.numeric(urls$`GA Sessions`)
 urls$Active[which(urls$`GA Sessions` > 0)] <- TRUE
 
 urls$Active <- as.factor(urls$Active)
@@ -161,7 +165,6 @@ print("Group Visits OK")
 
 #Numeric
 urls$`Status Code` <- as.factor(as.character(urls$`Status Code`))
-urls$`GA Sessions` <- as.numeric(urls$`GA Sessions`)
 
 # Stop the clock
 print(proc.time() - ptm)
