@@ -22,5 +22,6 @@ export/*.png
 
 output/*.csv
 input/*.xlsx
+input/dataseo/
 
 test.R

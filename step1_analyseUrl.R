@@ -5,9 +5,9 @@ library(stringr)
 library(fastmatch)
 
 #conf
-siteconf <- "./conf/blog.csv"
-sitename <- "https://wordpress-logs-vincent59.c9users.io"
-pathxlsx <- "./input/blog/internal_html_test.xlsx"
+siteconf <- "./conf/data.csv"
+sitename <- "https://data-seo.fr"
+pathxlsx <- "./input/dataseo/internal_html.xlsx"
 
 ## use xlsx format to prevent read errors with csv and xls
 
