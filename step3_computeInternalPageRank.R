@@ -4,8 +4,8 @@ library(ggplot2)
 library(magrittr)
 
 #screaming frog :  Bulk Export > All Outlinks from the top menu, and save the CSV file 
-file_outlinks         <- './input/blog/all_outlinks_test.csv'
-website_url          <- 'https://wordpress-logs-vincent59.c9users.io'
+file_outlinks         <- './websites/dataseo/all_outlinks.csv'
+website_url          <- 'https://data-seo.fr'
 
 # transform raw internal page rank to page rank
 map <- function(x, range = c(0,1), from.range=NA) {

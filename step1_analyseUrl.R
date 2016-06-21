@@ -5,9 +5,9 @@ library(stringr)
 library(fastmatch)
 
 #conf
-siteconf <- "./conf/data.csv"
+siteconf <- "./websites/dataseo/segments.csv"
 sitename <- "https://data-seo.fr"
-pathxlsx <- "./input/dataseo/internal_html.xlsx"
+pathxlsx <- "./websites/dataseo/internal_html.xlsx"
 
 ## use xlsx format to prevent read errors with csv and xls
 
@@ -186,4 +186,4 @@ urls_csv <- select(urls, Address,Category,Active,Speed,Compliant,Level,
             mutate(Address=gsub(sitename,"",Address))
 
 colnames(urls_csv) <- NULL
-write.csv2(urls_csv,paste("output/crawled-urls-filebeat-",format(Sys.time(), "%Y%m%d"),".csv",sep=""), row.names = FALSE)
+write.csv2(urls_csv,paste("filebeat-csv/crawled-urls-filebeat-",format(Sys.time(), "%Y%m%d"),".csv",sep=""), row.names = FALSE)

@@ -66,7 +66,7 @@ p <- ggplot(urls_cat_statustitle, aes(x=Category, y=count, fill=`Status Title`) 
      labs(x = "Section", y ="Crawled URLs") 
      #+ ggtitle("Nombre d'urls crawlés par section et status de la balise title")
 
-ggsave(file="./export/urlsBysectionFillstatustitle.png")
+ggsave(file="./graphs/urlsBysectionFillstatustitle.png")
 
 
 p <- ggplot(urls_cat_statusdesc, aes(x=Category, y=count, fill=`Status Description`) ) +
@@ -75,7 +75,7 @@ p <- ggplot(urls_cat_statusdesc, aes(x=Category, y=count, fill=`Status Descripti
   labs(x = "Section", y ="Crawled URLs") 
   #+ ggtitle("Nombre d'urls crawlés par section et status de la balise description")
   
-ggsave(file="./export/urlsBystatusFillstatusdescription.png")  
+ggsave(file="./graphs/urlsBystatusFillstatusdescription.png")  
   
 p <- ggplot(urls_cat_statush1, aes(x=Category, y=count, fill=`Status H1`) ) +
   geom_bar(stat = "identity", position = "stack") +
@@ -83,7 +83,7 @@ p <- ggplot(urls_cat_statush1, aes(x=Category, y=count, fill=`Status H1`) ) +
   labs(x = "Section", y ="Crawled URLs")
   #+ ggtitle("Nombre d'urls crawlés par section et status de la balise H1")
 
-ggsave(file="./export/urlsBysectionFillstatush1.png")  
+ggsave(file="./graphs/urlsBysectionFillstatush1.png")  
 
 
 p <- ggplot(urls_level_active, aes(x=Level, y=count, fill=Active) ) +
@@ -92,7 +92,7 @@ p <- ggplot(urls_level_active, aes(x=Level, y=count, fill=Active) ) +
      labs(x = "Depth", y ="Crawled URLs")
      #+ ggtitle("Nombre d'urls crawlés par profondeur et status actif")
 
-ggsave(file="./export/urlsBydepthFillactive.png")  
+ggsave(file="./graphs/urlsBydepthFillactive.png")  
 
 p <- ggplot(urls_cat_active, aes(x=Category, y=count, fill=Active) ) +
      geom_bar(stat = "identity", position = "stack") +
@@ -101,7 +101,7 @@ p <- ggplot(urls_cat_active, aes(x=Category, y=count, fill=Active) ) +
      labs(x = "Section", y ="Crawled URLs")
      #+ ggtitle("Nombre d'urls crawlés par section et status actif")
 
-ggsave(file="./export/urlsBysectionFillactive.png")
+ggsave(file="./graphs/urlsBysectionFillactive.png")
 
 p <- ggplot(urls_cat_inlinks, aes(x=Category, y=count, fill=`Status Code`) ) +
    geom_bar(stat = "identity", position = "stack") +
@@ -111,7 +111,7 @@ p <- ggplot(urls_cat_inlinks, aes(x=Category, y=count, fill=`Status Code`) ) +
    #+ ggtitle("Nombre de liens entrants par section et status code")
 
 
-ggsave(file="./export/inlinksBysectionFillcompliant.png")
+ggsave(file="./graphs/inlinksBysectionFillcompliant.png")
 
 p <- ggplot(urls_cat_compliant, aes(x=Category, y=count, fill=Compliant) ) +
    geom_bar(stat = "identity", position = "stack") +
@@ -119,7 +119,7 @@ p <- ggplot(urls_cat_compliant, aes(x=Category, y=count, fill=Compliant) ) +
    labs(x = "Section", y ="Crawled URLs")
    #+ ggtitle("Nombre d'urls crawlés par section et compliant")
 
-ggsave(file="./export/urlsBysectionFillcompliant.png")
+ggsave(file="./graphs/urlsBysectionFillcompliant.png")
 
 # fill=Speed
 p <- ggplot(urls_cat_gasessions, aes(x=Category, y=`GA Sessions`, fill=Compliant) ) +
@@ -131,7 +131,7 @@ p <- ggplot(urls_cat_gasessions, aes(x=Category, y=`GA Sessions`, fill=Compliant
   #,"#fc0000","#000000"
   #+ ggtitle("Nombre de sessions par section")
 
-ggsave(file="./export/sessionsBysectionFillcompliant.png")
+ggsave(file="./graphs/sessionsBysectionFillcompliant.png")
 
 p <- ggplot(urls_cat_status, aes(x=Category, y=count, fill=`Status Code` ) ) +
   geom_bar(stat = "identity", position = "stack") +
@@ -140,7 +140,7 @@ p <- ggplot(urls_cat_status, aes(x=Category, y=count, fill=`Status Code` ) ) +
   scale_fill_manual(values=c("#4DBD33","#e5e500","#b5bd33","#fc0033", "#000000"))
   #+ ggtitle("Nombre d'urls crawlés par section et status code")
 
-ggsave(file="./export/urlsBysectionFillstatus.png")
+ggsave(file="./graphs/urlsBysectionFillstatus.png")
 
 p <- ggplot(urls_level_speed, aes(x=Level, y=count, fill=Speed ) ) +
       geom_bar(stat = "identity", position = "stack") +
@@ -149,7 +149,7 @@ p <- ggplot(urls_level_speed, aes(x=Level, y=count, fill=Speed ) ) +
       labs(x = "Profondeur", y ="Crawled URLs")
       #+ ggtitle("Nombre d'urls crawlés par profondeur et temps de chargement")
 
-ggsave(file="./export/urlsBydepthFillspeed.png")
+ggsave(file="./graphs/urlsBydepthFillspeed.png")
 
 p <- ggplot(urls_level_sessions, aes( x=Level, y=`GA Sessions` ) ) +
   geom_bar(stat = "identity", position = "stack") +
@@ -157,7 +157,7 @@ p <- ggplot(urls_level_sessions, aes( x=Level, y=`GA Sessions` ) ) +
   labs(x = "Profondeur", y ="GA Sessions")
   #+ ggtitle("Nombre de sessions par profondeur")
 
-ggsave(file="./export/sessionsBylevels.png")
+ggsave(file="./graphs/sessionsBylevels.png")
 
 p <- ggplot(urls_cat_speed, aes(x=Category, y=count, fill=Speed ) ) +
       geom_bar(stat = "identity", position = "stack") +
@@ -166,7 +166,7 @@ p <- ggplot(urls_cat_speed, aes(x=Category, y=count, fill=Speed ) ) +
       scale_fill_manual(values=c("#4DBD33","#e5e500","#fc0000","#000000"))
       # + ggtitle("Nombre d'urls crawlés par section et temps de chargement")
 
-ggsave(file="./export/urlsBysectionFillspeed.png")
+ggsave(file="./graphs/urlsBysectionFillspeed.png")
 
 p <- ggplot(urls_cat_compliant_statuscode, aes(x=Category, y=count, fill= Compliant ) ) +
        geom_bar(stat = "identity", position = "stack") +
@@ -176,6 +176,6 @@ p <- ggplot(urls_cat_compliant_statuscode, aes(x=Category, y=count, fill= Compli
        scale_fill_manual(values=c("#e5e500","#4DBD33","#fc0000","#000000"))
        # + ggtitle("Nombre d'urls crawlés par section et compliant")
 
-ggsave(file="./export/urlsBysectionFillcompliant.png")
+ggsave(file="./graphs/urlsBysectionFillcompliant.png")
 
 
