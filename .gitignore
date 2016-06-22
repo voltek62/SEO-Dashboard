@@ -22,3 +22,6 @@ vignettes/*.pdf
 graphs/*.png
 dist/
 downloads/
+R.log
+debug/
+filebeat-csv/*

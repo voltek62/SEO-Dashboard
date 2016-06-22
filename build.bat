@@ -25,6 +25,7 @@ rem --------------------------------------
 rem ---------- Unzip packages ----------
 rmdir /Q /S temp
 mkdir temp
+mkdir dist
 
 %ZIP% x -otemp downloads\kibana-%KIBANA_VERSION%.zip
 %ZIP% x -otemp downloads\filebeat-%FILEBEAT_VERSION%.zip
