@@ -73,6 +73,15 @@ filter {
             add_field => { "bot" => "bing" }
          }
       }
+	  
+	  mutate {
+         convert => { 
+             "depth" => "integer"
+             "inlinks" => "integer"
+             "outlinks" => "integer"
+         }
+      }	  
+	  
     }
     if [type] == "csv" {
         csv {
