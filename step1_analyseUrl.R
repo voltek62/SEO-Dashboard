@@ -8,6 +8,7 @@ library(readxl)
 library(dplyr)
 library(stringi)
 library(stringr)
+library(urltools)
 
 #conf
 siteconf <- "./websites/dataseo/segments.csv"
@@ -33,7 +34,8 @@ if (!exists("urls")) {
   print("urls")
   print(proc.time() - ptm)
   
-  sitename <- domain(urls[1,]$Address)
+  # detect domain name
+  sitename <- paste(scheme(urls[1,]$Address),"://",domain(urls[1,]$Address),sep="")
 }
 
 print("urls loaded")
