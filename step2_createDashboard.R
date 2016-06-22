@@ -1,4 +1,9 @@
-#prepare all graphs
+#autoinstall packages
+packages <- c("dplyr", "ggplot2")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
 library(dplyr)
 library(ggplot2)
 

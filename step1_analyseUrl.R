@@ -1,16 +1,19 @@
+ #autoinstall packages
+packages <- c("readxl", "dplyr", "stringi", "stringr", "urltools")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
+library(readxl)
 library(dplyr)
 library(stringi)
-library(readxl)
 library(stringr)
-library(fastmatch)
 
 #conf
 siteconf <- "./websites/dataseo/segments.csv"
-sitename <- "https://data-seo.fr"
 pathxlsx <- "./websites/dataseo/internal_html.xlsx"
 
 ## use xlsx format to prevent read errors with csv and xls
-
 print("open xlsx....")
 
 if (!exists("urls")) {
@@ -29,6 +32,8 @@ if (!exists("urls")) {
   
   print("urls")
   print(proc.time() - ptm)
+  
+  sitename <- domain(urls[1,]$Address)
 }
 
 print("urls loaded")

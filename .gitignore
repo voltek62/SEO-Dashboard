@@ -25,3 +25,4 @@ downloads/
 R.log
 debug/
 filebeat-csv/*
+filebeat-logs/*

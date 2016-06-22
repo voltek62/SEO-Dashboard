@@ -1,3 +1,9 @@
+#autoinstall packages
+packages <- c("igraph", "dplyr", "ggplot2", "magrittr")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
 library(igraph)
 library(dplyr)
 library(ggplot2)
