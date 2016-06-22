@@ -19,7 +19,7 @@ vignettes/*.pdf
 .httr-oauth
 
 # SEO
-graphs/*.png
+graphs/
 dist/
 downloads/
 R.log

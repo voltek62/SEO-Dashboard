@@ -17,7 +17,7 @@ pathxlsx <- "./websites/dataseo/internal_html.xlsx"
 ## use xlsx format to prevent read errors with csv and xls
 print("open xlsx....")
 
-if (!exists("urls")) {
+#if (!exists("urls")) {
   ptm <- proc.time()
   urls <-  read_excel(pathxlsx, 
                       sheet = 1, 
@@ -36,7 +36,7 @@ if (!exists("urls")) {
   
   # detect domain name
   sitename <- paste(scheme(urls[1,]$Address),"://",domain(urls[1,]$Address),sep="")
-}
+#}
 
 print("urls loaded")
 print("-------------------")
@@ -120,9 +120,11 @@ print("Speed OK")
 
 # Detect Active Pages
 urls$Active <- FALSE
-urls$`GA Sessions`[is.na(urls$`GA Sessions`)] <- "0"
-urls$`GA Sessions` <- as.numeric(urls$`GA Sessions`)
-urls$Active[which(urls$`GA Sessions` > 0)] <- TRUE
+if ( !is.null(urls$`GA Sessions`) ) {
+ urls$`GA Sessions`[is.na(urls$`GA Sessions`)] <- "0"
+ urls$`GA Sessions` <- as.numeric(urls$`GA Sessions`)
+ urls$Active[which(urls$`GA Sessions` > 0)] <- TRUE
+}
 
 urls$Active <- as.factor(urls$Active)
 
