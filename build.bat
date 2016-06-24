@@ -34,7 +34,7 @@ mkdir dist
 move temp\kibana-%KIBANA_VERSION%-windows dist\kibana
 move temp\filebeat-%FILEBEAT_VERSION%-windows dist\filebeat
 
-rem copy /Y tools\kibana-example.yml dist\kibana\config\kibana.yml
+copy /Y tools\kibana-example.yml dist\kibana\config\kibana.yml
 copy /Y tools\filebeat-example.yml dist\filebeat\filebeat.yml
 
 rem ------------------------------------
