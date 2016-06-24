@@ -96,7 +96,7 @@ filter {
 
 OVHCOMMONAPACHELOG %{IPORHOST:clientip} %{USER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion_num:float})?|%{DATA:rawrequest})" %{NUMBER:response_int:int} (?:%{NUMBER:bytes_int:int}|-)
 OVHCOMBINEDAPACHELOG %{OVHCOMMONAPACHELOG} "%{NOTSPACE:referrer}" %{QS:agent}
-
+OVHCOMMONIISLOG %{TIMESTAMP_ISO8601:log_timestamp} %{WORD:iisSite} %{IPORHOST:site} %{WORD:method} %{URIPATH:page} %{NOTSPACE:querystring} %{NUMBER:port} %{NOTSPACE:username} %{IPORHOST:clienthost} %{NOTSPACE:useragent} %{NOTSPACE:referer} %{NUMBER:response} %{NUMBER:subresponse} %{NUMBER:scstatus} %{NUMBER:bytes:int} %{NUMBER:timetaken:int}
 
 ---------------------------------
 

@@ -6,7 +6,7 @@ SET NSSM=tools\nssm\win64\nssm.exe
 SET ZIP=tools\7zip\7za.exe
 
 rem ---------- components versions
-SET KIBANA_VERSION=4.1.8
+SET KIBANA_VERSION=4.5.1
 SET FILEBEAT_VERSION=1.2.3
 
 rem ---------- installer version
@@ -24,6 +24,7 @@ rem --------------------------------------
 
 rem ---------- Unzip packages ----------
 rmdir /Q /S temp
+rmdir /Q /S dist
 mkdir temp
 mkdir dist
 
@@ -33,7 +34,7 @@ mkdir dist
 move temp\kibana-%KIBANA_VERSION%-windows dist\kibana
 move temp\filebeat-%FILEBEAT_VERSION%-windows dist\filebeat
 
-copy /Y tools\kibana-example.yml dist\kibana\config\kibana.yml
+rem copy /Y tools\kibana-example.yml dist\kibana\config\kibana.yml
 copy /Y tools\filebeat-example.yml dist\filebeat\filebeat.yml
 
 rem ------------------------------------
