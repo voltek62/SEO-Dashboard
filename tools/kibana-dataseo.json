@@ -81,7 +81,7 @@
       "title": "HTTP Codes",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"2XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"3XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"4XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"5XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"URLS-BY-PAGETYPE-SEGMENTS-AND-HTTP-STATUS-CODE\",\"row\":6,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"URLS-BY-DEPTH-AND-PAGETYPE-SEGMENTS\",\"row\":11,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"TOP-4XX\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":3},{\"id\":\"TOP-5XX\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":3,\"col\":7,\"row\":3}]",
+      "panelsJSON": "[{\"col\":1,\"id\":\"2XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"3XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"4XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"5XX-URLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"URLS-BY-PAGETYPE-SEGMENTS-AND-HTTP-STATUS-CODE\",\"row\":6,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"URLS-BY-DEPTH-AND-PAGETYPE-SEGMENTS\",\"row\":11,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"TOP-4XX\",\"row\":3,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"TOP-5XX\",\"row\":3,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"}]",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
@@ -372,32 +372,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "4XX-URLS",
-    "_type": "visualization",
-    "_source": {
-      "title": "4XX URLS",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache AND -type:\\\"nohtml\\\" AND response_int:{400 TO 410}\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "3XX-URLS",
-    "_type": "visualization",
-    "_source": {
-      "title": "3XX URLS",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache AND -type:\\\"nohtml\\\" AND response_int:{300 TO 310}\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -827,6 +801,32 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache AND -type:\\\"nohtml\\\" AND response_int:{500 TO 510}\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3XX-URLS",
+    "_type": "visualization",
+    "_source": {
+      "title": "3XX URLS",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache AND -type:\\\"nohtml\\\" AND response_int:{300 TO 302}\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4XX-URLS",
+    "_type": "visualization",
+    "_source": {
+      "title": "4XX URLS",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logsDataSEOfr\",\"query\":{\"query_string\":{\"query\":\"type:apache AND -type:\\\"nohtml\\\" AND response_int:{400 TO 410}\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
