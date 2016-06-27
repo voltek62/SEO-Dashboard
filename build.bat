@@ -27,6 +27,8 @@ rmdir /Q /S temp
 rmdir /Q /S dist
 mkdir temp
 mkdir dist
+mkdir filebeat-csv
+mkdir filebeat-logs
 
 %ZIP% x -otemp downloads\kibana-%KIBANA_VERSION%.zip
 %ZIP% x -otemp downloads\filebeat-%FILEBEAT_VERSION%.zip
